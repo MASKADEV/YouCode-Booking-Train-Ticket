@@ -3,7 +3,7 @@
         <h1>Search For Trip</h1>
     </div>
     <div class="container mt-4">
-        <form method = "POST" action = "/booking/search">
+        <form method = "POST" action = "/Booking_Train/booking/search">
             <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
@@ -85,7 +85,7 @@
                         <td><?= $value['depart_city'] ?></td>
                         <td><?= $value['arrive_city'] ?></td>
                         <td><?= $value['date'] . "  " .$value['depart_time'] ?></td>
-                        <td><a href="<?php if ($cancel_available == true){ echo 'http://172.16.139.9/booking/deleteBooking/' . $value['id'];} {echo "";}?>" class ="btn text-danger fw-bold" style="margin:0px; padding:0px">Cancel Trip</a></td>
+                        <td><a href="<?php if ($cancel_available == true){ echo 'http://172.16.139.9/Booking_Train/booking/deleteBooking/' . $value['id'];} {echo "";}?>" class ="btn text-danger fw-bold" style="margin:0px; padding:0px">Cancel Trip</a></td>
                     </tr>
                 </tbody>
                 <?php endif; ?>

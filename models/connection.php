@@ -46,6 +46,21 @@ class Connection
 		return $query->fetchAll(PDO::FETCH_ASSOC);
 	}
 
+	public function updatePlaces($id, $place_number,$operation) {
+		if($operation) 
+		{
+			$place_number = $place_number - 1;
+			$sql = "UPDATE `trip` SET `place_number`=$place_number WHERE `id` = $id";
+			$query=$this->conn->prepare($sql);
+			$query->execute();
+		}else {
+			$place_number = $place_number + 1;
+			$sql = "UPDATE `trip` SET `place_number`=$place_number WHERE `id` = $id";
+			$query=$this->conn->prepare($sql);
+			$query->execute();
+		}
+	}
+
 	public function selectOne($table, $email, $password)
 	{
 		$str = "SELECT * FROM `$table` WHERE email=? AND password=?";
@@ -66,6 +81,12 @@ class Connection
 		$query=$this->conn->prepare("SELECT * FROM `trip`");
 		$query->execute();
 		return $query->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+	public function fetchBooking($id) {
+		$query=$this->conn->prepare("SELECT * FROM `booking` WHERE `id` = $id");
+		$query->execute();
+		return $query->fetch(PDO::FETCH_ASSOC);
 	}
 
 	public function searchTrip($table, $depart_city, $arrive_city)

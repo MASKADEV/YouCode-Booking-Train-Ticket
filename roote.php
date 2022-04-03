@@ -23,8 +23,8 @@ if (isset($params[0])&&!empty($params[0]))
 				}
 			}else
 			{
-				header('location: http://172.16.139.9/home');
-				echo 'no page here';
+				// header('location: http://172.16.139.9/Booking_Train/home');
+				echo 'no page here 1';
 			}
 		}else
 		{
@@ -33,11 +33,11 @@ if (isset($params[0])&&!empty($params[0]))
 		}
 	}else
 	{
-		header('location: http://172.16.139.9/home');
-		echo 'no page here';
+		// header('location: http://172.16.139.9/Booking_Train/home');
+		echo 'no page here 2';
 	}
 }else
 {
-	header('location: http://172.16.139.9/home');
-	echo 'no page here';
+	// header('location: http://172.16.139.9/Booking_Train/home');
+	echo 'no page here 3';
 }

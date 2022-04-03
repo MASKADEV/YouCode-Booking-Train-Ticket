@@ -19,7 +19,7 @@ class ManagmentController
 	public function addTrip() {
 		$managment = new Managment();
 		$managment->addtrip($_POST['date'],$_POST['depart_time'], $_POST['arrive_time'], '00:00', $_POST['depart_city'], $_POST['arrive_city'], $_POST['price'], $_POST['place_number']);
-		header("Location: http://172.16.139.9/managment");
+		header("Location: http://172.16.139.9/Booking_Train/managment");
 	}
 
 	public function cancelTrip() {
@@ -28,7 +28,7 @@ class ManagmentController
 		unset($params[0]);
 		unset($params[1]);
 		$managment->canceltrip($params[2]);
-		header("Location: http://172.16.139.9/managment");
+		header("Location: http://172.16.139.9/Booking_Train/managment");
 	}
 
 	public function deleteBooking () {
@@ -37,7 +37,7 @@ class ManagmentController
 		unset($params[0]);
 		unset($params[1]);
 		$managment->deletebooking($params[2]);
-		header("Location: http://172.16.139.9/managment");
+		header("Location: http://172.16.139.9/Booking_Train/managment");
 	}
 
 }

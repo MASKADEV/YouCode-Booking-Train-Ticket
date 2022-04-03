@@ -26,7 +26,9 @@ class BookingManagment {
         }else {
             $user_id = 'none';
         }
+
         $trip_details = $db-> fetchOnetrip($id);
+        $db->updatePlaces($id,$trip_details['place_number'], true);
         $date = date("Y-m-d h:i");
         $db->insert('booking', ['email', 'full_name', 'booking_time','phone_number',
         'depart_city', 'arrive_city', 'during_time', 'date', 'depart_time', 'arrive_time',
@@ -41,8 +43,11 @@ class BookingManagment {
         return $result;
     }
     public function deletebooking ($id) {
-        $ctn = new Connection();
-        $ctn->delete('booking', $id);
+        $db = new Connection();
+        $booking_details = $db->fetchBooking($id);
+        $trip_result = $db->fetchOneTrip($booking_details['id_trip']);
+        $db->updatePlaces($booking_details['id_trip'], $trip_result['place_number'], false);
+        $db->delete('booking', $id);
     }
 }
 
