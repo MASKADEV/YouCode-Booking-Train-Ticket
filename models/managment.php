@@ -17,6 +17,12 @@ class Managment {
         $db->cancelTrip($this->table, $id);
     }
 
+    public function activetrip ($id) {
+        $db = new Connection();
+        $db->activeTrip($this->table, $id);
+    }
+
+
     public function fetchAllTrip() {
         $db = new Connection();
         $result = $db->selectAll('booking');
@@ -25,7 +31,7 @@ class Managment {
     
     public function deletebooking ($id) {
         $ctn = new Connection();
-        $ctn->delete('trip', $id);
+        $ctn->delete('booking', $id);
     }
 }
 

@@ -16,7 +16,7 @@ class SigninController
 		session_start();
 		if(!empty($_SESSION['id']) && isset($_SESSION['id']))
 		{
-			header('location: http://172.16.139.9/Booking_Train/home');
+			header('location: http://localhost/Booking-train-ticket/home');
 		}else {
 			require_once __DIR__."/../views/signin.php";
 		}

@@ -21,14 +21,14 @@ class Authentication {
             $_SESSION["email"] = $maska['email'];
             $_SESSION["full_name"] = $maska['full_name'];
             $_SESSION["role"] = $maska['role'];
-            header('location: http://172.16.139.9/Booking_Train/home');
+            header('location: http://localhost/Booking-train-ticket/home');
             exit();
         }
             if(isset($_SESSION['id']))
             {
-                header('location: http://172.16.139.9/Booking_Train/home');
+                header('location: http://localhost/Booking-train-ticket/home');
             }else {
-                header('location: http://172.16.139.9/Booking_Train/signin');
+                header('location: http://localhost/Booking-train-ticket/signin');
             }
 		    
     }

@@ -60,7 +60,7 @@
 <br>
 <br>
     <?php foreach($result as $key=>$value): ?>
-      <?php if($value['date'] > date('Y-m-d') && $value['place_number'] > 0): ?>
+      <?php if($value['date'] > date('Y-m-d') && $value['place_number'] > 0 && $value['available'] != 0): ?>
         <div class="container w-75" style= "max-width:600px; margin-bottom:100px;">
             <div class="custom-card shadow d-flex flex-column p-3" style ="border-radius:10px">
                 <div class="container d-flex flex-row justify-content-between align-items-center">
@@ -94,7 +94,7 @@
     </div>
         <div class="bg-primary mt-5 d-flex justify-content-center align-items-center">
             <div class="mt-5 position-absolute popup-container" id="popup-wrapper" >
-                <Form action = "http://172.16.139.9/Booking_Train/booking/booknow" method = "POST">
+                <Form action = "http://localhost/Booking-train-ticket/booking/booknow" method = "POST">
                         <h2 class = "title fw-bold">Add Info</h2>
                         <div class="mt-4">
                             <label for="full_name" class="form-label">Full Name</label>

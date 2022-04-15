@@ -26,7 +26,6 @@ class BookingManagment {
         }else {
             $user_id = 'none';
         }
-
         $trip_details = $db-> fetchOnetrip($id);
         $db->updatePlaces($id,$trip_details['place_number'], true);
         $date = date("Y-m-d h:i");

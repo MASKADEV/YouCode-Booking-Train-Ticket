@@ -20,7 +20,7 @@
                     <th>Arrive</th>
                     <th>Date</th>
                     <th>Price</th>
-                    <th>Delete</th>
+                    <th>Operation</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,7 +30,11 @@
                             <th><?php echo $value['arrive_city'] ?></th>
                             <th><?php echo $value['date'] ?></th>
                             <th><?php echo $value['price'] ?></th>
-                            <td><a href="<?php echo "http://172.16.139.9/Booking_Train/managment/deleteBooking/" . $value['id']; ?>" class="text-danger">Delete</a></td>
+                            <?php if($value['available'] == 1): ?>
+                                <td><a href="<?php echo "http://localhost/Booking-train-ticket/managment/cancelTrip/" . $value['id']; ?>" class="text-danger">Cancel</a></td>
+                            <?php else: ?>
+                                <td><a href="<?php echo "http://localhost/Booking-train-ticket/managment/activeTrip/" . $value['id']; ?>" class="text-success">Active</a></td>
+                            <?php endif; ?>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -58,7 +62,7 @@
                         <td><?=$value['full_name']?></td>
                         <td><?=$value['depart_city']?></td>
                         <td><?=$value['arrive_city']?></td>
-                        <td><a href ="<?php echo "http://172.16.139.9/Booking_Train/managment/deletebooking/" . $value['id']; ?>" class ="btn text-danger fw-bold" style="margin:0px; padding:0px">Delete Booking</a></td>
+                        <td><a href ="<?php echo "http://localhost/Booking-train-ticket/managment/deletebooking/" . $value['id']; ?>" class ="btn text-danger fw-bold" style="margin:0px; padding:0px">Delete Booking</a></td>
                     </tr>
                 </tbody>
                 <?php endforeach; ?>
@@ -67,9 +71,9 @@
 
 
     <!-- Add Trip -->
-        <div class="w-100 mt-5 d-flex justify-content-center align-items-center">
-            <div class="mt-5 position-absolute popup-container" id="popup-wrapper" >
-                <Form action = "http://172.16.139.9/Booking_Train/managment/addTrip" method = "POST">
+        <div class="w-50 mx-auto mt-1 d-flex justify-content-center align-items-center">
+            <div class="mt-2 position-absolute popup-container" id="popup-wrapper" >
+                <Form action = "http://localhost/Booking-train-ticket/managment/addTrip" method = "POST">
                         <h2 class = "title fw-bold">ADD TRIP</h2>
                         <div class="input-group mt-4 ps-2 pe-2">
                             <label class="input-group-text" for="inputGroupSelect01">Depart</label>

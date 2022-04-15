@@ -9,7 +9,7 @@
                         <img src="public/assets/login_thumb.svg" alt="">
                 </div>
                 <div class="right-auth-container">
-                    <Form class = "auth-form" action="http://172.16.139.9/Booking_Train/signin/signin" method = "POST">
+                    <Form class = "auth-form" action="http://localhost/Booking-train-ticket/signin/signin" method = "POST">
                         <div class="mb-3 w-100">
                             <label for="exampleFormControlInput1" class="form-label">E-mail</label>
                             <input type="email" name='email' class="form-control w-100" id="exampleFormControlInput1" placeholder="name@example.com">
