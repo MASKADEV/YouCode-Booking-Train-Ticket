@@ -1,5 +1,4 @@
 <?php 
-
 $params=explode("/", $_GET['p']);
 if (isset($params[0])&&!empty($params[0]))
 {
@@ -24,7 +23,6 @@ if (isset($params[0])&&!empty($params[0]))
 			}else
 			{
 				header('location: http://localhost/Booking-train-ticket/home');
-				echo 'no page here 1';
 			}
 		}else
 		{
@@ -34,10 +32,8 @@ if (isset($params[0])&&!empty($params[0]))
 	}else
 	{
 		header('location: http://localhost/Booking-train-ticket/home');
-		echo 'no page here 2';
 	}
 }else
 {
 	header('location: http://localhost/Booking-train-ticket/home');
-	echo 'no page here 3';
 }
