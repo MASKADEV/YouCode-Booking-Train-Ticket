@@ -9,7 +9,7 @@ class Managment {
 
     public function addtrip ($date, $depart_time, $arrive_time, $during_time, $depart_city, $arrive_city, $price, $place_number) {
         $db = new Connection();
-        $db->insert($this->table, ['date', 'depart_time', 'arrive_time', 'during_time', 'depart_city', 'arrive_city', 'price', 'place_number', 'available'], [$date, $depart_time, $arrive_time, $during_time, $depart_city, $arrive_city, $price, $place_number, '0']);
+        $db->insert($this->table, ['date', 'depart_time', 'arrive_time', 'during_time', 'depart_city', 'arrive_city', 'price', 'place_number', 'available'], [$date, $depart_time, $arrive_time, $during_time, $depart_city, $arrive_city, $price, $place_number, '1']);
     }
 
     public function canceltrip ($id) {

@@ -66,7 +66,7 @@
                             $minutes = $difference->days * 24 * 60;
                             $minutes += $difference->h * 60;
                             $minutes += $difference->i;
-                            echo $minutes . " ";
+                            // echo $minutes . " ";
                             if($minutes < 60) {
                                 $cancel_available = false;
                             }else {

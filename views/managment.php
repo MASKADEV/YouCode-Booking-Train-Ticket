@@ -5,7 +5,6 @@
     </div>
 
     <!-- Manage Trip Delete  -->
-
     <div class="d-flex flex-column mt-5 ms-2 me-2">
         <div class="managment-left-container d-flex flex-column justify-content-center align-items-center w-100">
             <h2 class = "title fw-bold mb-4">MANAGE TRIP</h2>
@@ -13,7 +12,7 @@
                 require_once('models/connection.php');
                 $db = new Connection();
                 $result = $db->fetchTrip();?>
-            <table class ="table container">
+            <table class ="table container" style="font-size : 14px;">
                 <thead class="table-dark">
                     <tr>
                     <th>Depart</th>
@@ -47,7 +46,7 @@
         <div class="managment-right-containers d-flex flex-column justify-content-center align-items-center w-100">
             <h2 class="title fw-bold mb-4 mt-4">ALL RESERVATION</h2>
         </div>
-        <table class ="table mt-4 fw-bold mb-4 container">
+        <table class ="table mt-1 fw-bold mb-4 container" style="font-size : 14px;" >
                 <thead class="table-dark">
                     <tr>
                     <th scope="col">Full name</th>
@@ -62,17 +61,17 @@
                         <td><?=$value['full_name']?></td>
                         <td><?=$value['depart_city']?></td>
                         <td><?=$value['arrive_city']?></td>
-                        <td><a href ="<?php echo "http://localhost/Booking-train-ticket/managment/deletebooking/" . $value['id']; ?>" class ="btn text-danger fw-bold" style="margin:0px; padding:0px">Delete Booking</a></td>
+                        <td><a href ="<?php echo "http://localhost/Booking-train-ticket/managment/deletebooking/" . $value['id']; ?>" class ="btn text-danger fw-bold" style="margin:0px; padding:0px">Delete</a></td>
                     </tr>
                 </tbody>
                 <?php endforeach; ?>
-            </table>
+        </table>
     </div>
 
 
     <!-- Add Trip -->
         <div class="w-50 mx-auto mt-1 d-flex justify-content-center align-items-center">
-            <div class="mt-2 position-absolute popup-container" id="popup-wrapper" >
+            <div class="mt-0 position-absolute popup-container" id="popup-wrapper" style="margin: 0px;">
                 <Form action = "http://localhost/Booking-train-ticket/managment/addTrip" method = "POST">
                         <h2 class = "title fw-bold">ADD TRIP</h2>
                         <div class="input-group mt-4 ps-2 pe-2">
@@ -116,8 +115,8 @@
                                 <input type="number" min="1" class="form-control" id="priceid" name="price" required>
                             </div>
                         <div>
-                        <button class= "btn btn-primary mt-4 d-grid col-5 mx-auto pt-2 pb-2" type="submit">ADD</button>
-                        <a class= "btn btn-danger mt-4 d-grid col-5 mx-auto pt-2 pb-2" id="btn-cancel" >Cancel</a>
+                            <button class= "btn btn-primary mt-4 d-grid col-5 mx-auto pt-2 pb-2" type="submit">ADD</button>
+                            <a class= "btn btn-danger mt-4 d-grid col-5 mx-auto pt-2 pb-2" id="btn-cancel" >Cancel</a>
                         </div>
                 </Form>
             </div>
