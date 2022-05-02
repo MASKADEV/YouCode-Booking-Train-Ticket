@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="public/style/style.css">
     <link rel="stylesheet" href="../public/style/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>MASKATrip</title>
+    <title>BRAND.</title>
 </head>
 <body style="background-color: #f5f6fa">
     <div class="main-section">
             <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg navbar-dark py-3" style ="background-color:#4A1FA9">
+            <nav class="navbar navbar-expand-lg navbar-dark py-3" style ="background-color:#6c5ce7">
           <div class="container">
-            <a href="#" class="navbar-brand">MASKATrip</a>
+            <a href="#" class="navbar-brand">BRAND.</a>
             <button
               class="navbar-toggler"
               type="button"

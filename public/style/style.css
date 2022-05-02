@@ -13,7 +13,7 @@ html {
 
 body {
   font-family: 'Raleway';
-  height: 100vh;
+  height: 80vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -181,8 +181,8 @@ h1 {
   opacity: 0;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  -webkit-transform: scale(1.3);
-          transform: scale(1.3);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
   z-index: 1;
   top: 15%;
   background-color: #4A1FA8;
@@ -313,9 +313,6 @@ h1 {
     position: relative;
     bottom: 0px;
     clear: both;
-  }
-  .popup-container {
-    margin: 0px 40px;
   }
 }
 /*# sourceMappingURL=style.css.map */
