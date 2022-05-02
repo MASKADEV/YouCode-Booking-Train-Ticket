@@ -112,9 +112,15 @@ class Connection
 	}
 
 	public function cancelTrip($table, $id){
+		ini_set('display_errors', 1);
+		error_reporting(E_ALL);
 		$query = $this->conn->prepare("UPDATE $table
 		SET available = '0'
 		WHERE `id`= $id");
+		$query->execute();
+		$query = $this->conn->prepare("
+			DELETE FROM `booking` WHERE `id_trip` = $id
+		");
 		$query->execute();
 	}
 	public function activeTrip($table, $id){
