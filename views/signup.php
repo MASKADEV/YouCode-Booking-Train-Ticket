@@ -12,15 +12,15 @@
                     <Form class ="auth-form" action="http://localhost/Booking-train-ticket/signup/signup_function" method = "POST">
                         <div class="mb-3 w-100">
                             <label for="exampleFormControlInput1" class="form-label">E-mail</label>
-                            <input type="email" name='email' class="form-control w-100" id="exampleFormControlInput1" placeholder="name@example.com">
+                            <input required type="email" name='email' class="form-control w-100" id="exampleFormControlInput1" placeholder="name@example.com">
                         </div>
                         <div class="mb-3 w-100">
                             <label for="exampleFormControlInput1" class="form-label">Full name</label>
-                            <input type="name" name='full_name' class="form-control w-100" id="exampleFormControlInput1" placeholder="Full nmae">
+                            <input required type="name" name='full_name' class="form-control w-100" id="exampleFormControlInput1" placeholder="Full nmae">
                         </div>
                         <div class="mb-3 w-100">
                             <label for="exampleFormControlInput1" class="form-label">Password</label>
-                            <input type="password" name= 'password' class="form-control w-100" id="exampleFormControlInput1" placeholder="Password">
+                            <input required type="password" name= 'password' class="form-control w-100" id="exampleFormControlInput1" placeholder="Password">
                         </div>
                         <button type="submit" class="btn btn-primary pt-2 pb-2 ps-4 pe-4 mt-3">Sign up</button>
                     </Form>                    
