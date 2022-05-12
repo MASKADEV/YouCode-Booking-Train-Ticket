@@ -10,10 +10,8 @@ class Connection
 
 	public function __construct()
 	{
-
 		try {
 			  $this->conn = new PDO("mysql:host=$this->servername;dbname=$this->database", $this->username, $this->password);
-			//   echo 'connection is Done!';
 			} catch(PDOException $e) 
 			{
 			  echo "Connection failed: " . $e->getMessage();
