@@ -52,22 +52,21 @@
                 <?php foreach($result as $key => $value) :?>
                 <?php if($value['date'] >= date("Y-m-d")): ?> 
                 <?php 
-                    $date_trip = date('Y-m-d h:i', strtotime($value['date'] . "  " .$value['depart_time']));
-                    $date = new DateTime($date_trip);
+                    ini_set('display_errors', 1);
+                    ini_set('display_startup_errors', 1);
+                    error_reporting(E_ALL);
+                    $date_trip = date('Y-m-d H:i', strtotime($value['date'] . "  " .$value['depart_time']));
+                    $date = new DateTime($date_trip, new DateTimeZone('UTC'));
                     $trip_date_month = ($date->format('m'));
                     $trip_date_day = ($date->format('d'));
+                    $trip_hour = ($date->format('H'));
                     $cancel_available = false;
-                    if(date("m") <= $trip_date_month) {
+                    if(date("m") <= $trip_date_month){
                         if(date("d") <= $trip_date_day){
-                            $start_date = new DateTime(date("Y-m-d H:i"));
-                            $since_start = $start_date->diff($date);                            
-                            // echo $since_start->h . " " . $since_start->i . "<br>";
-                            if($since_start->h > 0){
-                                if($since_start->i > 60) {
-                                    $cancel_available = false;
-                                }else {
-                                    $cancel_available = true;
-                                }
+                            if((date("H") - 1) * 60 < $trip_hour * 60){
+                                $cancel_available = true;
+                            }else {
+                                $cancel_available = false;
                             }
                         }
                         else {
